@@ -1,0 +1,9 @@
+Miejsce: Niewielki kontenerowiec
+Czas: Świat po roztopnieniu lodowców
+Czas gry: Miesiąc
+
+Akcja: 
+Rano -> Przydzielanie zadań
+Popołudnie -> Wykonywanie zadań
+Wieczór -> Podejmowanie decyzji
+Noc -> Random Event

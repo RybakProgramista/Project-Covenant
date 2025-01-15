@@ -1,0 +1,19 @@
+Kapitana Przymierza gracz wybiera z dwóch możliwości, wypisanych poniżej
+
+Piotr: Były policjant z wybuchowym temperamentem.
+Agata: Wybitna biolożka, ale ciężko jej podejmować trudne decyzje.
+
+Krzysztof - Mechanik
+Straszny skurwysyn, ale zna się na swoim fachu
+
+Izabela - Pielęgniarka
+Wymęczona życiem ale zaradna
+
+Zdzichu - Ochroniarz
+Biegły w obsłudze broni, ale alkoholik
+
+
+
+
+
+
