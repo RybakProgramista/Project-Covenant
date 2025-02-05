@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-The Last Journey of ORP Przymierze/[Ll]ibrary/
-The Last Journey of ORP Przymierze/[Tt]emp/
-The Last Journey of ORP Przymierze/[Oo]bj/
-The Last Journey of ORP Przymierze/[Bb]uild/
-The Last Journey of ORP Przymierze/[Bb]uilds/
-The Last Journey of ORP Przymierze/[Ll]ogs/
-The Last Journey of ORP Przymierze/[Uu]ser[Ss]ettings/
+Verdant Wasteland/[Ll]ibrary/
+Verdant Wasteland/[Tt]emp/
+Verdant Wasteland/[Oo]bj/
+Verdant Wasteland/[Bb]uild/
+Verdant Wasteland/[Bb]uilds/
+Verdant Wasteland/[Ll]ogs/
+Verdant Wasteland/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
