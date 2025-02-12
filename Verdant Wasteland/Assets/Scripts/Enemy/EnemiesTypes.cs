@@ -1,36 +1,35 @@
+using NUnit.Framework;
 using UnityEngine;
 
 public abstract class Character
 {
-    protected readonly string name;
-    protected readonly int maxHP;
-    protected int currHP;
-    protected readonly int maxMana;
-    protected int currMana;
-    protected int speed;
-    protected int pos;
-    protected readonly int initiative;
-    protected readonly bool isPlayable;
-    protected Card[] cards;
-    public Card[] getCards() {  return cards; }
+    protected readonly string _name;
+    protected readonly int _maxHP;
+    protected int _currHP;
+    protected int _speed;
+    protected readonly int _initiative;
+    protected readonly bool _isPlayable;
+    protected Card[] _cards;
+    public Card[] getCards() {  return _cards; }
 
     public abstract void Attack(int pos);
-    public abstract void Move(int pos);
-    public abstract void Setup();
+    public string getName() { return _name; }
+    public int getMove() { return _speed; }
+    public int getInitiative() { return _initiative; }
+    public bool getIsPlayable() { return _isPlayable; }
     protected abstract void generateCards();
-    protected Character(string name, int maxHP, int maxMana, int speed, int initiative ,bool isPlayable)
+    protected Character(string name, int maxHP, int speed, int initiative ,bool isPlayable)
     {
-        this.name = name;
-        this.maxHP = currHP = maxHP;
-        this.maxMana = currMana = maxMana;
-        this.speed = speed;
-        this.initiative = initiative;
-        this.isPlayable = isPlayable;
+        this._name = name;
+        this._maxHP = _currHP = maxHP;
+        this._speed = speed;
+        this._initiative = initiative;
+        this._isPlayable = isPlayable;
     }
 }
 public class MeleeEnemy : Character
 {
-    protected MeleeEnemy(string name, int maxHP, int maxMana, int speed, int initiative) : base(name, maxHP, maxMana, speed, initiative, false)
+    public MeleeEnemy(string name, int maxHP, int speed, int initiative) : base(name, maxHP, speed, initiative, false)
     {
         
     }
@@ -40,19 +39,26 @@ public class MeleeEnemy : Character
         //atak u¿ywaj¹c kart
     }
 
-    public override void Move(int pos)
+    protected override void generateCards()
     {
-        //zmiana pozycji
+        //krupier
+    }
+}
+
+public class PlayerCharater : Character
+{
+    public PlayerCharater(string name, int maxHP, int speed, int initiative) : base(name, maxHP, speed, initiative, true)
+    {
     }
 
-    public override void Setup()
+    public override void Attack(int pos)
     {
-        //setup walki
+        throw new System.NotImplementedException();
     }
 
     protected override void generateCards()
     {
-        //krupier
+        throw new System.NotImplementedException();
     }
 }
 

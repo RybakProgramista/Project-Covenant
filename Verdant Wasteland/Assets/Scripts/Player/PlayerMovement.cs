@@ -4,9 +4,9 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D _playerRgb;
-    private bool canMove;
-    public bool getCanMove() { return canMove; }
-    public void setCanMove(bool canMove) { this.canMove = canMove; }   
+    private bool _canMove;
+    public bool getCanMove() { return _canMove; }
+    public void setCanMove(bool canMove) { this._canMove = canMove; }   
 
 
     [SerializeField]
@@ -20,13 +20,14 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _playerRgb = GetComponent<Rigidbody2D>();
+        _canMove = true;
         _movement = new Vector2(0, 0);
         speed = _baseSpeed;
     }
 
     private void FixedUpdate()
     {
-        if (canMove)
+        if (_canMove)
         {
             _playerRgb.linearVelocity = _movement * speed * _baseMultiplier * Time.deltaTime;
         }

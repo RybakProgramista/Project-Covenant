@@ -3,17 +3,18 @@ using UnityEngine.UI;
 
 public abstract class Card
 {
-    private Image cardImage;
-    private string cardName;
-    private string cardDescription;
+    protected Image _cardImage;
+    protected string _cardName;
+    protected string _cardDescription;
+    protected int _maxNumberOfUses;
+    protected int _currNumberOfUses;
+    protected bool isInfinite;
     public abstract void Use();
 }
-public abstract class Item : Card
+public class Move : Card
 {
-
-}
-
-public abstract class Spell : Card
-{
-
+    public override void Use()
+    {
+        
+    }
 }
