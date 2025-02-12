@@ -24,10 +24,10 @@ public class FightManager : MonoBehaviour
         {
             Setup(
            new List<Character>() {
-                new MeleeEnemy("Adolfo", 20, 5, 4),
+                new MeleeEnemy("Marek", 20, 5, 4),
                 new MeleeEnemy("Filip", 15, 2, 2),
                 new MeleeEnemy("Filip2", 15, 2, 3),
-                new MeleeEnemy("Adolfo Jr", 20, 5, 6),
+                new MeleeEnemy("Marek Jr", 20, 5, 6),
            }, new List<Character>
            {
                 new PlayerCharater("Kamil", 100, 100, 100)
@@ -47,12 +47,10 @@ public class FightManager : MonoBehaviour
         int iteration = 1;
         foreach (Character ch in _turnOrder)
         {
+            Debug.Log("Czy gracz? = " + ch.getIsPlayable());
             _positions.Add(ch, getRandomPosition(ch.getIsPlayable() ? playerPosPool : enemyPosPool));
             (ch.getIsPlayable() ? playerPosPool : enemyPosPool)[_positions[ch]] = false;
-            for(int x = 0; x < (ch.getIsPlayable() ? playerPosPool : enemyPosPool).Length; x++)
-            {
-                Debug.Log(iteration + " " + (ch.getIsPlayable() ? playerPosPool : enemyPosPool)[x]);
-            }
+            Debug.Log(iteration + " " + (ch.getIsPlayable() ? playerPosPool : enemyPosPool).ToString());
             iteration++;
         }
             
