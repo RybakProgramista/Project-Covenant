@@ -1,5 +1,5 @@
-using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public abstract class Character
 {
@@ -10,6 +10,10 @@ public abstract class Character
     protected readonly int _initiative;
     protected readonly bool _isPlayable;
     protected Card[] _cards;
+    protected Sprite _sprite;
+
+    public void setSprite(Sprite sprite) { _sprite = sprite; }
+    public Sprite getSprite() { return _sprite; }
     public Card[] getCards() {  return _cards; }
 
     public abstract void Attack(int pos);
@@ -18,18 +22,19 @@ public abstract class Character
     public int getInitiative() { return _initiative; }
     public bool getIsPlayable() { return _isPlayable; }
     protected abstract void generateCards();
-    protected Character(string name, int maxHP, int speed, int initiative ,bool isPlayable)
+    protected Character(string name, int maxHP, int speed, int initiative ,bool isPlayable, Sprite sprite)
     {
-        this._name = name;
-        this._maxHP = _currHP = maxHP;
-        this._speed = speed;
-        this._initiative = initiative;
-        this._isPlayable = isPlayable;
+        _name = name;
+        _maxHP = _currHP = maxHP;
+        _speed = speed;
+        _initiative = initiative;
+        _isPlayable = isPlayable;
+        _sprite = sprite;
     }
 }
 public class MeleeEnemy : Character
 {
-    public MeleeEnemy(string name, int maxHP, int speed, int initiative) : base(name, maxHP, speed, initiative, false)
+    public MeleeEnemy(string name, int maxHP, int speed, int initiative, Sprite sprite) : base(name, maxHP, speed, initiative, false, sprite)
     {
         
     }
@@ -47,7 +52,7 @@ public class MeleeEnemy : Character
 
 public class PlayerCharater : Character
 {
-    public PlayerCharater(string name, int maxHP, int speed, int initiative) : base(name, maxHP, speed, initiative, true)
+    public PlayerCharater(string name, int maxHP, int speed, int initiative, Sprite sprite) : base(name, maxHP, speed, initiative, true, sprite)
     {
     }
 
