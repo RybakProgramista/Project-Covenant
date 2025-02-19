@@ -97,7 +97,7 @@ public class FightManager : MonoBehaviour
 
         if (_positions.ContainsValue(pos))
         {
-            //zabezpieczenie aby dwie postacie nie wyl¹dowa³y na tej samej pozycji
+            //zabezpieczenie aby dwie postacie nie wylï¿½dowaï¿½y na tej samej pozycji
         }
         else if (_positions.ContainsKey(character))
         {
